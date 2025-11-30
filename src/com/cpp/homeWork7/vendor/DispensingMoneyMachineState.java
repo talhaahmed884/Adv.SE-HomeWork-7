@@ -11,12 +11,12 @@ public class DispensingMoneyMachineState extends StateOfVendingMachine {
 
     @Override
     public void selectSnack(VendingMachine machine, String itemName) {
-        System.out.println("Illegal operation! Processing a transaction.");
+        System.out.println("Illegal operation! Processing a transaction");
     }
 
     @Override
     public void insertMoney(VendingMachine machine, double amount) {
-        System.out.println("Illegal operation! Processing a transaction.");
+        System.out.println("Illegal operation! Processing a transaction");
     }
 
     @Override

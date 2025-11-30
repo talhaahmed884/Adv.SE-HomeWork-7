@@ -3,6 +3,10 @@ package com.cpp.homeWork7.vendor;
 public abstract class SnackDispenseHandler {
     private SnackDispenseHandler nextHandler;
 
+    SnackDispenseHandler getNextHandler() {
+        return nextHandler;
+    }
+
     void setNextHandler(SnackDispenseHandler nextHandler) {
         this.nextHandler = nextHandler;
     }
