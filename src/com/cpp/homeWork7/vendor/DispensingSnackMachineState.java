@@ -25,7 +25,7 @@ public class DispensingSnackMachineState extends StateOfVendingMachine {
         double snackPrice = snack.getPrice();
         if (snackPrice > this.inputAmount) {
             System.out.println("Current balance: $" + this.inputAmount);
-            System.out.println("Not enough funds yet. Insert at least: $" + (snackPrice - this.inputAmount));
+            System.out.printf("Not enough funds yet. Insert at least: $%.2f\n", (snackPrice - this.inputAmount));
             return;
         }
 

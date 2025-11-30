@@ -26,7 +26,7 @@ public class DispensingMoneyMachineState extends StateOfVendingMachine {
 
     @Override
     public void dispenseMoney(VendingMachine machine) {
-        System.out.println("Dispensing balance: $" + this.inputAmount);
+        System.out.printf("Dispensing balance: $%.2f\n", this.inputAmount);
         machine.setState(new IdleMachineState());
     }
 }

@@ -16,14 +16,14 @@ public class WaitingForMoneyMachineState extends StateOfVendingMachine {
 
     @Override
     public void insertMoney(VendingMachine machine, double amount) {
-        System.out.println("User has inserted amount: $" + amount);
+        System.out.printf("User has inserted amount: $%.2f\n", amount);
         this.inputAmount += amount;
-        System.out.println("Current balance: $" + this.inputAmount);
+        System.out.printf("Current balance: $%.2f\n", this.inputAmount);
 
         Snack snack = machine.getSnackChain().handleGetSnackRequest(this.selectedItemName);
-        double snackPrice = snack.getType().getPrice();
+        double snackPrice = snack.getPrice();
         if (snackPrice > this.inputAmount) {
-            System.out.println("Not enough funds yet. Insert at least: $" + (snackPrice - this.inputAmount));
+            System.out.printf("Not enough funds yet. Insert at least: $%.2f\n", (snackPrice - this.inputAmount));
             return;
         }
 
