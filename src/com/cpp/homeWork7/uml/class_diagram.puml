@@ -1,0 +1,55 @@
+@startuml
+
+title Class Diagram of Text Editor implementation
+
+package com.cpp.homeWork7{
+    class Character{
+        - char character
+        - CharacterProperties characterProperty
+
+        + Character(char character, CharacterProperties characterProperty)
+        + void setCharacter(char character)
+        + void setCharacterProperty(CharacterProperties characterProperty)
+        + char getCharacter()
+        + String getFont()
+        + String getColor()
+        + int getSize()
+    }
+
+    class CharacterProperties{
+        - String font
+        - String color
+        - int size
+
+        + CharacterProperties(String font, String color, int size)
+        + String getFont()
+        + String getColor()
+        + int getSize()
+    }
+
+    class CharacterPropertiesFactory{
+        - Map<String, CharacterProperties> flyweights
+
+        + CharacterProperties setAndRetrieveFlyweightCharacterProperties(String font, String color, int size)
+        + int sizeOfMap()
+    }
+
+    class Document{
+        - List<Character> characters
+        - CharacterPropertiesFactory propertiesFactory
+
+        + void addCharacter(char c, String font, String color, int size)
+        + void editCharacterProperties(int index, String font, String color, int size)
+        + void saveToFile(String filename)
+        + void loadFromFile(String filename)
+    }
+
+    Character "many" --> "1" CharacterProperties
+
+    CharacterProperties "many" --o "1" CharacterPropertiesFactory
+
+    Document "1" *-- "many" Character
+    Document "1" *-- "1" CharacterPropertiesFactory
+}
+
+@enduml

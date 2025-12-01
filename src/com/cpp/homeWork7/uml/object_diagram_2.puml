@@ -1,0 +1,151 @@
+@startuml
+
+title Object Diagram of Text Editor implementation
+
+package com.cpp.homeWork7{
+    object "testDocument : Document" as testDocument{
+        characters : List<Character>
+        propertiesFactory : CharacterPropertiesFactory
+    }
+    object "characters : List<Character>" as characters
+    object "propertiesFactory : CharacterPropertiesFactory" as propertiesFactory {
+        flyweights : Map<String, CharacterProperties>
+    }
+
+    object "character1 : Character" as character1{
+       character : char = H
+       characterProperty : CharacterProperties
+    }
+    object "character2 : Character" as character2{
+       character : char = e
+       characterProperty : CharacterProperties
+    }
+    object "character3 : Character" as character3{
+       character : char = l
+       characterProperty : CharacterProperties
+    }
+    object "character4 : Character" as character4{
+       character : char = l
+       characterProperty : CharacterProperties
+    }
+    object "character5 : Character" as character5{
+       character : char = o
+       characterProperty : CharacterProperties
+    }
+    object "character6 : Character" as character6{
+       character : char = W
+       characterProperty : CharacterProperties
+    }
+    object "character7 : Character" as character7{
+       character : char = o
+       characterProperty : CharacterProperties
+    }
+    object "character8 : Character" as character8{
+       character : char = r
+       characterProperty : CharacterProperties
+    }
+    object "character9 : Character" as character9{
+       character : char = l
+       characterProperty : CharacterProperties
+    }
+    object "character10 : Character" as character10{
+       character : char = d
+       characterProperty : CharacterProperties
+    }
+    object "character11 : Character" as character11{
+       character : char = C
+       characterProperty : CharacterProperties
+    }
+    object "character12 : Character" as character12{
+       character : char = S
+       characterProperty : CharacterProperties
+    }
+    object "character13 : Character" as character13{
+       character : char = 5
+       characterProperty : CharacterProperties
+    }
+    object "character14 : Character" as character14{
+       character : char = 8
+       characterProperty : CharacterProperties
+    }
+    object "character15 : Character" as character15{
+       character : char = 0
+       characterProperty : CharacterProperties
+    }
+    object "character16 : Character" as character16{
+       character : char = 0
+       characterProperty : CharacterProperties
+    }
+
+    object "characterProperty1 : CharacterProperties" as characterProperty1{
+        font : String = "Arial"
+        color : String = "Black"
+        size : int = 16
+    }
+    object "characterProperty2 : CharacterProperties" as characterProperty2{
+        font : String = "Arial"
+        color : String = "Black"
+        size : int = 14
+    }
+    object "characterProperty3 : CharacterProperties" as characterProperty3{
+        font : String = "Verdana"
+        color : String = "Blue"
+        size : int = 18
+    }
+    object "characterProperty4 : CharacterProperties" as characterProperty4{
+        font : String = "Verdana"
+        color : String = "Red"
+        size : int = 12
+    }
+
+    object "characterProperty5 : CharacterProperties" as characterProperty5{
+        font : String = "Calibri"
+        color : String = "Blue"
+        size : int = 99
+    }
+
+    character1 --> characterProperty5
+    character2 --> characterProperty2
+    character3 --> characterProperty2
+    character4 --> characterProperty2
+    character5 --> characterProperty2
+    character6 --> characterProperty5
+    character7 --> characterProperty2
+    character8 --> characterProperty2
+    character9 --> characterProperty2
+    character10 --> characterProperty2
+    character11 --> characterProperty3
+    character12 --> characterProperty3
+    character13 --> characterProperty4
+    character14 --> characterProperty4
+    character15 --> characterProperty4
+    character16 --> characterProperty4
+
+    characters --> character1
+    characters --> character2
+    characters --> character3
+    characters --> character4
+    characters --> character5
+    characters --> character6
+    characters --> character7
+    characters --> character8
+    characters --> character9
+    characters --> character10
+    characters --> character11
+    characters --> character12
+    characters --> character13
+    characters --> character14
+    characters --> character15
+    characters --> character16
+
+    propertiesFactory --> characterProperty1
+    propertiesFactory --> characterProperty2
+    propertiesFactory --> characterProperty3
+    propertiesFactory --> characterProperty4
+    propertiesFactory --> characterProperty5
+
+    testDocument --> characters
+    testDocument --> propertiesFactory
+}
+
+@enduml
