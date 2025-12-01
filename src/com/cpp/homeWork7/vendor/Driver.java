@@ -131,5 +131,8 @@ public class Driver {
         machine.selectSnack("Kitkat");
         machine.dispenseMoney();
         System.out.println();
+
+        System.out.println("A new operation");
+        machine.selectSnack("Snickers");
     }
 }
